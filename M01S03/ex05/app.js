@@ -59,7 +59,7 @@ console.log(
 
 // Afiseaza propozitia “Am x prieteni: Larryson, Stevenson si Carolson.”. Foloseste proprietatea length si apeleaza direct proprietatile name ale obiectelor.
 console.log(
-  `Am ${person.friends.length}:  ${person.skills[0]} si ${person.skills[2]}.`,
+  `Am ${person.friends.length} prieteni:  ${person.skills[0]} si ${person.skills[2]}.`,
 );
 
 // Afiseaza propozitia “Numele meu este xxx yyy, am zz ani si n prieteni.”. Foloseste metoda length pentru a calcula lungimea arrayului de prieteni.
