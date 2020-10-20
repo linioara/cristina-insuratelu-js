@@ -63,3 +63,12 @@ for (i = 1; i < 90; i++) {
   }
   console.log(i);
 }
+
+for (var i = 0; i <= 8; i++) {
+  console.log(i);
+}
+
+var i = 0;
+for (; i <= 8; i++) {
+  console.log(i);
+}
