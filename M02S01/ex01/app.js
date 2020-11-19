@@ -1,6 +1,10 @@
 class Car {
   topReverseSpeed = -50;
 
+  isTrunkOpen = false;
+
+  areLightsOn = false;
+
   constructor(make, color, wheels, speed) {
     this.make = make;
     this.color = color;
@@ -9,6 +13,9 @@ class Car {
 
     this.topSpeed = 160;
     // this.topReverseSpeed = -50;
+
+    // this.isTrunkOpen = false;
+    // this.areLightsOn = false;
   }
 
   accelerate() {
@@ -44,6 +51,34 @@ class Car {
 
     this.speed = speed;
   }
+
+  openTrunk() {
+    this.isTrunkOpen = true;
+    console.log(this.isTrunkOpen);
+  }
+
+  closeTrunk() {
+    this.isTrunkOpen = false;
+    console.log(this.isTrunkOpen);
+  }
+
+  turnLightsOn() {
+    this.areLightsOn = true;
+    console.log(this.areLightsOn);
+  }
+
+  turnLightsOff() {
+    this.areLightsOn = false;
+    console.log(this.areLightsOn);
+  }
+
+  flashLights() {
+    this.turnLightsOn();
+
+    setTimeout(function () {
+      this.turnLightsOff();
+    }, 3000); // asta ma bate...
+  }
 }
 
 // new Date()
@@ -54,7 +89,7 @@ console.warn(
   `Instantiaza o alta masina (Opel, red, 4 rosi, viteza 3). o poti salva intr-o variabila numita opel`,
 );
 
-let opel = new Car('Opel', 'red', 4, 3);
+let opel = new Car('Opel', 'red', 4, 30);
 
 console.warn(
   `Adauga o metoda numita stop() care sa faca proprietatea speed 0, apoi afiseaza viteza.`,
@@ -86,3 +121,12 @@ b. In fiecare iteratie, decelereaza masina cu 5 unitati, apoi afiseaza: “Vitez
 `);
 
 const cars = [audi, opel];
+
+cars.forEach((car) => {
+  console.log(
+    `Masina este marca ${car.make} si se deplaseaza cu ${car.speed} km/h.`,
+  );
+
+  car.setSpeed(car.speed - 5);
+  console.log(`Viteza noua este ${car.speed} km/h.`);
+});

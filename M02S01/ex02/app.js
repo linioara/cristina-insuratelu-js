@@ -40,19 +40,21 @@ class Vehicle {
     if (speed > this.topSpeed) {
       this.speed = this.topSpeed;
 
-      this.displaySpeed();
-      return;
-    }
-
-    if (speed < this.topReverseSpeed) {
+      this.displaySpeed(
+        `Viteza curenta a vehiculului ${this.make} este: ${this.speed} km/h.`,
+      );
+    } else if (speed < this.topReverseSpeed) {
       this.speed = this.topReverseSpeed;
 
-      this.displaySpeed();
-      return;
+      this.displaySpeed(
+        `Viteza curenta a vehiculului ${this.make} este: ${this.speed} km/h.`,
+      );
+    } else {
+      this.speed = speed;
+      this.displaySpeed(
+        `Viteza curenta a vehiculului ${this.make} este: ${this.speed} km/h.`,
+      );
     }
-
-    this.speed = speed;
-    this.displaySpeed();
   }
 }
 
