@@ -75,9 +75,7 @@ class Car {
   flashLights() {
     this.turnLightsOn();
 
-    setTimeout(function () {
-      this.turnLightsOff();
-    }, 3000); // asta ma bate...
+    setTimeout(this.turnLightsOff, 3000);
   }
 }
 
